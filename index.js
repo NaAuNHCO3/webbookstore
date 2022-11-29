@@ -7,11 +7,11 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/' + 'index.html')
 })
 
-app.get('login', function(req, res) {
+app.get('/login', function(req, res) {
 	res.sendFile(__dirname + '/html' + '/login.html')
 })
 
-app.get('register', function(req, res) {
+app.get('/register', function(req, res) {
 	res.sendFile(__dirname + '/html' + '/register.html')
 })
 
