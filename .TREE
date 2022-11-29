@@ -1,0 +1,14 @@
+.
+├── index.js	(主函数/入口点)
+├── index.html	(首页界面)
+├── html		(诸html文件)
+│   ├── login.html		(html示例)
+│   └── register.html	(html示例)
+├── public		(站点可调用资源)
+│   ├── css		(css文件)
+│   ├── img		(图片文件)
+│   ├── js		(脚本文件)
+│   └── lib		(函数库)
+├── package.json
+├── package-lock.json
+└── README.md
