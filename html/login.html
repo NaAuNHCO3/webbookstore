@@ -6,10 +6,19 @@
 </head>
 <body>
 	<div>login</div>
-	<form method="post" action="/login">
+	<form id="form" method="post" action="/login">
 		UserName:<input type="text" name="username"></br>
 		Password:<input type="password" name="password"></br>
 		<input type="submit" value="Submit"></br>
 	</form>
+	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#form").ajaxForm(function(message) {
+				alert(message)
+			})
+		})
+	</script>
 </body>
 </html>
