@@ -9,4 +9,4 @@ router.get('/user', function(req, res) {
 	res.sendFile('user.html', { root: root })
 })
 
-modul.exports = router
+module.exports = router
