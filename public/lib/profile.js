@@ -6,7 +6,7 @@ const root = path.join(__dirname, '../../')
 
 // 访问用户界面
 router.get('/user', function(req, res) {
-	res.sendFile('user.html', { root: root })
+	res.sendFile('html/user.html', { root: root })
 })
 
 module.exports = router
