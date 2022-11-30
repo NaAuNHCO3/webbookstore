@@ -15,12 +15,11 @@
 	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$("#form").ajaxForm(function(msg) {
-				var msgJson = Json.parse(msg)
-				if(mrgJson.status == 0) {
+			$("#form").ajaxForm(function(message) {
+				if(message.status == 0) {
 					window.location.href = "/user"
 				} else {
-					alert(msgJson.msg)
+					alert(message.msg)
 				}
 			})
 		})
