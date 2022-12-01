@@ -2,14 +2,15 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="/public/css/login.css">
-	<link rel="stylesheet" type="text/css" href="/public/css/template.css">
+
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/css/template.css">
 </head>
 <body>
 	<div class="loginpad">
 	<div class="title">Register</div>
 		<div>
-			<form id="form" method="post" action="/login">
+			<form id="form" method="post" action="/register">
 				UserName:<input type="text" name="username"><br/>
 				Password :<input type="password" name="password"><br/>
 				<input type="submit" value="Submit" class="submitbutton"><br/>
@@ -21,7 +22,11 @@
 	<script>
 		$(document).ready(function() {
 			$("#form").ajaxForm(function(message) {
-				alert(message)
+				if(message.status == 0) {
+					window.location.href = "/user"
+				} else {
+					alert(message.msg)
+				}
 			})
 		})
 	</script>

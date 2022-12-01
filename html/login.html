@@ -2,8 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="/public/css/login.css">
-	<link rel="stylesheet" type="text/css" href="/public/css/template.css">
+
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/css/template.css">
 </head>
 <body>
 	<div class="loginpad">
@@ -18,10 +19,15 @@
 	</div>
 	<script type="text/javascript" src="/public/js/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/public/js/jquery.form.min.js"></script>
+
 	<script>
 		$(document).ready(function() {
 			$("#form").ajaxForm(function(message) {
-				alert(message)
+				if(message.status == 0) {
+					window.location.href = "/user"
+				} else {
+					alert(message.msg)
+				}
 			})
 		})
 	</script>
