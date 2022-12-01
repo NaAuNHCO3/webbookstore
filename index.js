@@ -4,6 +4,8 @@ const app = express()
 // 提供静态资源
 app.use('/', express.static('public'))
 
+app.use(express.urlencoded({ extended:false }))
+
 // base路由，访问首页、登陆界面、注册界面
 const base = require('./public/lib/base.js')
 app.use('/', base)

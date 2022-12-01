@@ -4,8 +4,10 @@ const mysql = require('mysql')
 const db = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: '',
+	password: 'king,too,rain',
 	database: 'webbookstore',
 })
+
+db.connect()
 
 module.exports = db
