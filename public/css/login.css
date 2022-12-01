@@ -1,1 +1,10 @@
 
+
+.loginpad {
+	width: 400px;
+	background-color: gray;
+	margin: auto;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 30px;
+}
