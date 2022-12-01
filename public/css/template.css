@@ -1,0 +1,39 @@
+/* CSS Document */
+body{
+	margin: none;
+	padding:none;
+	overflow: hidden;
+	letter-spacing: 1px;
+}
+
+.submitbutton {
+	width: auto;
+	background-color: #CCCCCC;
+}
+.submitbutton:hover{
+	background-color: #AAAAAA;
+}
+
+.title {
+	font-size: 40px;
+	line-height: 50px;
+	margin: 10px 5px;
+	cursor:default;
+	text-align: center;
+	text-shadow: 3px 3px 1px #555555;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	color:blue;
+}
+
+.annotation {
+	font-size: 10px;
+	letter-spacing: 0;
+	color:#DFAF38;
+}
