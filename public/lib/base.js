@@ -19,7 +19,7 @@ router.get('/login', function(req, res) {
 // 发起登录请求
 router.post('/login', function(req, res) {
 	const body = req.body
-	db.query('select accountid, password from user where user.username=?', body.username, function(err, result) {
+	db.query('select accountid, password, userclass from user where user.username=?', body.username, function(err, result) {
 		if (err){
 			console.log(err.message)
 			return res.send({
@@ -41,7 +41,9 @@ router.post('/login', function(req, res) {
 		}
 		res.send({
 			status: 0,
-			msg: result[0].accountid
+			msg: 'success',
+			id: result[0].accountid,
+			class: result[0].userclass
 		})
 	})
 })
