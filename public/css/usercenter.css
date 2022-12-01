@@ -1,0 +1,21 @@
+
+.userpad {
+	background-color: gray;
+	text-align: center;
+	width:300px;
+	margin:auto;
+	border-radius: 3px;
+}
+
+.choicelist {
+	border-top:solid 1px #CCCCCC;
+	line-height: 30px;
+}
+.choicelist:hover{
+	background-color: #AEAEAE;
+	line-height: 40px;
+	transition-property: all;
+	transition-duration: .2s;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px gray;
+}
