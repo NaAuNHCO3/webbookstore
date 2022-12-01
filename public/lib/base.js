@@ -16,7 +16,10 @@ router.get('/login', function(req, res) {
 
 // 发起登录请求
 router.post('/login', function(req, res) {
-	res.send('error!!!')
+	res.send({
+		status: 0,
+		msg: 'sucess',
+	})
 })
 
 // 访问注册界面
