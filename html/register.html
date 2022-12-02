@@ -19,16 +19,6 @@
 	</div>
 	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#form").ajaxForm(function(message) {
-				if(message.status == 0) {
-					window.location.href = "/user"
-				} else {
-					alert(message.msg)
-				}
-			})
-		})
-	</script>
+	<script type="text/javascript" src="/js/register.js"></script>
 </body>
 </html>
