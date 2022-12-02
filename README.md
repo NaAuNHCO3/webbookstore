@@ -1,2 +1,22 @@
-# webbookstore
-homework
+# webbookstore网上书店
+我们的webbookstore网上书店，采用node.js作为脚本语言，承担web网页与mysql数据库的连接
+
+## 用户指南
+
+## 工作思路
+### login
+-  连接数据库
+-  查询有无用户
+-  比对密码
+-  释放连接
+-  返回成功信息
+
+### register
+- 连接数据库
+- 查询用户名是否已存在
+- 存储用户信息
+- 释放连接
+- 返回成功信息
+  
+
+

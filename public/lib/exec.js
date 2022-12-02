@@ -1,7 +1,7 @@
 const db = require('./sql.js')
 
 const exec = function(sqlArr) {
-	return new Promise((resolve, reject) {
+	return new Promise(function(resolve, reject) {
 		const promiseArr = []
 		db.getConnection(function(err, conn) {
 			if(err) {
