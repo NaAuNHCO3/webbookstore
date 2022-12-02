@@ -27,7 +27,7 @@ router.post('/login', function(req, res) {
 				msg: 'connect failed'
 			})
 		}
-		conn.query('select accountid, password from user where user.username=?', body.username, function(err, result) {
+		conn.query('select accountid, password, userclass from user where user.username=?', body.username, function(err, result) {
 			if (err){
 				console.log(err.message)
 				return res.send({
@@ -50,7 +50,9 @@ router.post('/login', function(req, res) {
 			conn.release()
 			res.send({
 				status: 0,
-				msg: result[0].accountid
+				msg: 'sucess',
+				id: result[0].accountid,
+				class: result[0].userclass
 			})
 		})
 	})
