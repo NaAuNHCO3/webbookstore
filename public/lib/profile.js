@@ -58,7 +58,7 @@ router.get('/changeprofile', function(req ,res){
 })
 
 // 修改用户信息
-router.post('/profile', function(req, res){
+router.post('/changeprofile', function(req, res){
 	const body=req.body
 	db.getConnection(function(err, conn){
 		if(err) {
@@ -69,7 +69,7 @@ router.post('/profile', function(req, res){
 			})
 		}
 		var sql= 'update user set email=?,address=?,telephone=?,abstract=? where user.accountid=?'
-		conn.query(sql,(body.email,body.address,body.telephone,body.abstract,body.accountid), function(err, result){
+		conn.query(sql,[body.email,body.address,body.telephone,body.abstract,body.accountid], function(err, result){
 			if (err){
 				console.log(err.message)
 				return res.send({
