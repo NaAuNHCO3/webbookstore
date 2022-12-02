@@ -14,6 +14,10 @@ app.use('/', base)
 const profile = require('./public/lib/profile.js')
 app.use('/', profile)
 
+// search路由，访问图书查询界面，执行查询图书操作
+const search = require('./public/lib/search.js')
+app.use('/', search)
+
 // 监听8080端口
 app.listen(8080, function() {
 	console.log('server running at http://127.0.0.1:8080')
