@@ -1,13 +1,13 @@
 const mysql = require('mysql')
 
-// 连接数据库
-const db = mysql.createConnection({
+// 建立连接池
+const db = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: 'king,too,rain',
+	password: 'hMp7r_v2yFJ53WK',
 	database: 'webbookstore',
+	connectLimit: 20,
+	multipleStatements: true
 })
-
-db.connect()
 
 module.exports = db
