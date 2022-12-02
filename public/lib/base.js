@@ -19,29 +19,39 @@ router.get('/login', function(req, res) {
 // 发起登录请求
 router.post('/login', function(req, res) {
 	const body = req.body
-	db.query('select accountid, password from user where user.username=?', body.username, function(err, result) {
-		if (err){
+	db.getConnection(function(err, conn) {
+		if(err) {
 			console.log(err.message)
 			return res.send({
 				status: 1,
-				msg: 'query error'
+				msg: 'connect failed'
 			})
 		}
-		if (result.length != 1){
-			return res.send({
-				status: 1,
-				msg: 'no user'
+		conn.query('select accountid, password from user where user.username=?', body.username, function(err, result) {
+			if (err){
+				console.log(err.message)
+				return res.send({
+					status: 1,
+					msg: 'query error'
+				})
+			}
+			if (result.length != 1){
+				return res.send({
+					status: 1,
+					msg: 'no user'
+				})
+			}
+			if (result[0].password != body.password) {
+				return res.send({
+					status: 1,
+					msg: 'password error'
+				})	
+			}
+			conn.release()
+			res.send({
+				status: 0,
+				msg: result[0].accountid
 			})
-		}
-		if (result[0].password != body.password) {
-			return res.send({
-				status: 1,
-				msg: 'password error'
-			})	
-		}
-		res.send({
-			status: 0,
-			msg: result[0].accountid
 		})
 	})
 })
@@ -54,32 +64,41 @@ router.get('/register', function(req, res) {
 // 发起注册请求
 router.post('/register', function(req, res) {
 	const body= req.body
-	db.query('select * from user where user.username=?',body.username, function(err, result){
-		if (err){
+	db.getConnection(function(err, conn){
+		if(err) {
 			console.log(err.message)
 			return res.send({
 				status: 1,
-				msg: '203'
+				msg: 'connect failed'
 			})
 		}
-		if (result.length!=0){
-			return res.send({
-				status: 1,
-				msg: 'user existing'
-			})
-		}
-		db.query('insert into user (username,password) values (?,?)',[body.username,body.password], function(err, result){
-			if (err) {
+		conn.query('select * from user where user.username=?',body.username, function(err, result){
+			if (err){
 				console.log(err.message)
 				return res.send({
 					status: 1,
 					msg: '203'
 				})
 			}
-			console.log(result)
-			res.send({
-				status: 0,
-				msg: 'register successfully'
+			if (result.length!=0){
+				return res.send({
+					status: 1,
+					msg: 'user existing'
+				})
+			}
+			conn.query('insert into user (username,password) values (?,?)',[body.username,body.password], function(err, result){
+				if (err) {
+					console.log(err.message)
+					return res.send({
+						status: 1,
+						msg: '203'
+					})
+				}
+				conn.release()
+				res.send({
+					status: 0,
+					msg: 'register successfully'
+				})
 			})
 		})
 	})
