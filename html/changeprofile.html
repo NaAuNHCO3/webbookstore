@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/template.css">
+	<link rel="stylesheet" type="text/css" href="/css/profile.css">
+<title>Profile</title>
+</head>
+
+<body>
+	<div class="profilepad">
+	  <div class="title">Profile</div>
+		<form id="form" method="post" action="/changeprofile">
+		<div class="userdata">
+			<div class="fixed">AccountId</div><div class="fixed">Immutable</div>
+		    <div>UserName</div><input type="text" name=？ value="">
+			<div class="fixed">Type</div><div class="fixed">Immutable</div>
+			<div>E-mail</div><input type="email" name=？ value="">
+			<div>Telephone</div><input type="tel" name=？ value="">
+			<div>Address</div><input type="text" name=？ value="">
+			<div>Description</div><input type="text" name=？ value="">
+			<div style="grid-column: 1 / 3"><input type="submit" class="submitbutton" value="Confirm"></div>
+		</div>
+		</form>
+		<div class="choicelist"><a href="/changeprofile">Refresh</a></div>
+		<div class="choicelist"><a href=?>&lt;-Back</a></div>
+	</div>
+</body>
+</html>

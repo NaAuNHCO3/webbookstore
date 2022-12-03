@@ -1,0 +1,29 @@
+/* CSS Document */
+
+
+.profilepad {
+	width: 400px;
+	margin: auto;
+	background: gray;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.userdata {
+	border-top: solid 1px #AAAAAA;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-row-gap: 10px;
+	cursor: default;
+}
+
+input {
+	width: 150px;
+	margin: auto;
+}
+
+.fixed {
+	color: #700F11;
+}

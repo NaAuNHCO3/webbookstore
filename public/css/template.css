@@ -4,6 +4,7 @@ body{
 	padding:none;
 	overflow: hidden;
 	letter-spacing: 1px;
+	background:#000000;
 }
 
 .submitbutton {
@@ -36,4 +37,17 @@ a:hover{
 	font-size: 10px;
 	letter-spacing: 0;
 	color:#DFAF38;
+}
+.choicelist {
+	border-top:solid 1px #CCCCCC;
+	line-height: 30px;
+	cursor: pointer;
+}
+.choicelist:hover{
+	background-color: #AEAEAE;
+	line-height: 40px;
+	transition-property: all;
+	transition-duration: .2s;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px gray;
 }
