@@ -4,44 +4,33 @@
 <meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/css/template.css">
 	<link rel="stylesheet" type="text/css" href="/css/search.css">
-	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
-	<script>
-		function ext(){
-			$(".objecttohide").toggle();
-			$(".hiddenobject").toggle();
-			$(".table").css("grid-template-columns"," 50% 50%");
-			$(".resultpad").css("display","grid")
-		}
-	</script>
 <title>Search</title>
 </head>
-
 <body>
 	<div class="searchpad">
 		<div class="title">Search</div>
 		<div class="searchform">
-			<form method="post" action="/search">
+			<form id="form" method="post" action="/search">
 				<div class="table">
-					<div class="hiddenobject">bookname</div><input type="text" name=? value="Bookname" autofocus><input type="submit" value="Search" class="searchbutton objecttohide">
-					<div class="hiddenobject">Author</div><input type="text" name=? class="hiddenobject">
-					<div class="hiddenobject">Press</div><input type="text" name=? class="hiddenobject">
-					<div class="hiddenobject">Max Price</div><input type="text" name=? class="hiddenobject">
-					<div class="hiddenobject">Min Price</div><input type="text" name=? class="hiddenobject">
+					<div class="hiddenobject">bookname</div><input type="text" name="bookname" value="Bookname" autofocus>
+					<input type="submit" value="Search" class="searchbutton objecttohide">
+					<div class="hiddenobject">Author</div><input type="text" name="author" class="hiddenobject">
+					<div class="hiddenobject">Press</div><input type="text" name="press" class="hiddenobject">
+					<div class="hiddenobject">Max Price</div><input type="text" name="bookpricemax" class="hiddenobject">
+					<div class="hiddenobject">Min Price</div><input type="text" name="bookpricemin" class="hiddenobject">
 					<input type="submit" value="Search" class="searchbutton hiddenobject cross">
 					<div type="submit" value="Search" class="cross choicelist objecttohide" onClick="ext()">Extend Search</div>
 				</div>
 			</form>
 		</div>
 	</div>
-	<div class="resultpad" style="display: none">
-		<div class="bookinfo">
+	<div id="resultpad" class="resultpad" style="display: none">
+		<div id="bookinfo" class="bookinfo">
 			<ul>
-				<li><a class="booklink">Bookname</a></li>
-				<li class="annotation">Author</li>
-				<li class="annotation">Press</li>
-				<li class="annotation">Price</li>
-				<li class="annotation">Price</li>
+				<li><a id="bookname" class="booklink">Bookname</a></li>
+				<li id="author" class="annotation">Author</li>
+				<li id="press" class="annotation">Press</li>
+				<li id="price" class="annotation">Price</li>
 			</ul>
 			<div class="operation">
 				<ul style="border: none;">
@@ -50,7 +39,16 @@
 				</ul>
 			</div>
 		</div>
-		
 	</div>
+	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script>
+		function ext(){
+			$(".objecttohide").toggle();
+			$(".hiddenobject").toggle();
+			$(".table").css("grid-template-columns"," 50% 50%");
+		}
+	</script>
+	<script type="text/javascript" src="/js/search.js"></script>
 </body>
 </html>

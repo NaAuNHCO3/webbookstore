@@ -14,8 +14,6 @@ router.get('/search', function(req, res){
 router.post('/search', function(req, res){
     const body=req.body
     var sql = 'select * from book where bookname like ? and press like ? and author like ? and bookprice <= ? and bookprice >= ?'
-	console.log(body)
-	console.log(body.bookname)
 	var value = [
 		body.bookname ? '%'+body.bookname+'%' : '%%',
 		body.press ? '%'+body.press+'%' : '%%',
@@ -31,7 +29,6 @@ router.post('/search', function(req, res){
                 msg: 'connect failed'
             })
         }
-		console.log(value)
         conn.query(sql,value,function(err, result){
             if(err){
                 console.log(err.message)
