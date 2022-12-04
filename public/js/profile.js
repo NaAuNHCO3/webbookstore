@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$("#back").attr("href", window.localStorage.getItem("class"))
 	$.post(
 		"/profile",
-		{ accountid: window.localStorage.getItem("id") },
+		{ accountid: window.sessionStorage.getItem("id") },
 		function(message) {
 			if(message.status == 0) {
 				var data = message.data[0]

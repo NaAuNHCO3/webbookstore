@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#back").attr("href", window.localStorage.getItem("class"))
+	$("#back").attr("href", window.sessionStorage.getItem("home"))
 	$("#form").ajaxForm(function(message) {
 		$("#resultpad").children().not(":first").remove()
 		if(message.status == 0) {
@@ -9,6 +9,7 @@ $(document).ready(function() {
 			} else {
 				$(".resultpad").css("display", "grid")
 				for(var i = 1; i <= data.length; i++) {
+					$("#bookinfo:nth-child("+i+")").find("#bookid").text(data[i-1].bookid)
 					$("#bookinfo:nth-child("+i+")").find("#bookname").text(data[i-1].bookname)
 					$("#bookinfo:nth-child("+i+")").find("#author").text(data[i-1].author)
 					$("#bookinfo:nth-child("+i+")").find("#press").text(data[i-1].press)
