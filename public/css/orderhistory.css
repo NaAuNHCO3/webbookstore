@@ -1,0 +1,207 @@
+/* CSS Document */
+
+.orderspad{
+	background: gray;
+	width: 600px;
+	margin: auto;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+
+.detailpad {
+	background: #777777;
+	border: solid 1px #aaaaaa;
+	width: 800px;
+	margin: auto;
+	padding: 10px;
+}
+
+.orderdetail {
+	margin: auto;
+	border-right: solid 1px #cccccc;
+	border-left: solid 1px #cccccc;
+	border-bottom: solid 1px #cccccc;
+	width: 500px;
+	font-size: 15px;
+}
+
+.orderlist {
+	margin: 10px 30px;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+
+.detail {
+	display: grid;
+	padding-left: 1%;
+	grid-template-columns: 19% 30% 20% 15% 15%;
+	overflow: hidden;
+}
+.detail span{
+	height: 100%;
+	overflow: hidden;
+}
+
+.demo {
+	
+}
+
+.light {
+	background: #aaaaaa;
+}
+.light:hover{
+	background: #000000;
+	color: #cccccc !important;
+}
+.light:hover a{
+	color: #cccccc;
+}
+.light a:hover{
+	color: blue;
+}
+
+.quantity {
+	padding: 3px 0;
+	line-height: 20px;
+	font-size: 15px;
+	text-align:center; 
+}
+.quantity input{
+	width: 40%;
+}
+
+.total {
+	text-align: center;
+}
+
+.dark {
+	background: #666666;
+}
+.dark:hover{
+	background: #000000;
+	color: #cccccc !important;
+}
+.dark:hover a{
+	color: #cccccc;
+}
+.dark a:hover{
+	color: blue;
+}
+
+.remove {
+	text-align: center;
+	color: indianred;
+	cursor: pointer;
+}
+.remove:hover{
+	color: #cccccc;
+	background: red;
+}
+
+.summary {
+	margin:20px 30px;
+	padding: 20px 0;
+	border-top:dashed 1px #cccccc;
+	text-align: right;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+
+.totalbook {
+	width: 50px;
+	color: #1CA99E;
+}
+
+.totalprice {
+	width: 100px;
+	color: orange;
+}
+
+.address {
+	margin: 0 5px;
+	padding: 5px 15px;
+	border-top: solid 1px #cccccc;
+	letter-spacing: 0;
+}
+
+
+
+.address a {
+	display: inherit;
+}
+
+.button {
+	background: #444444;
+	color: #dddddd;
+	width: 100px;
+	height: 30px;
+	border-radius: 3px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.button:hover{
+	background: #333333;
+	color: #ffffff;
+}
+
+.operate {
+	margin:0 30px;
+	text-align: right;
+}
+
+.clear {
+	background: #777777;
+	color: #cccccc;
+	width: 100px;
+	height: 30px;
+	border-radius: 3px;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+.clear:hover{
+	color: #ffffff;
+}
+
+
+
+.order {
+	margin:10px auto;
+	border-top: solid 2px #000000;
+}
+
+.orderstate {
+	display: grid;
+	grid-template-columns: 15% 20% 17% 15% 10% 20% 3%;
+	border: solid 1px #cccccc;
+}
+
+.fold {
+	cursor: pointer;
+	color: #000000;
+	display: block;
+}
+.fold:hover{
+	color: #888888;
+}
+
+.status {
+	
+}
+
+.foot {
+	margin-top: 20px;
+	border-top: solid 2px #cccccc;
+	text-align:center;
+}
+
+.pro {
+	color: green;
+}
+.fin{
+	color: black;
+}
+.urg{
+	color:darkred;
+}
