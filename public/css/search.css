@@ -43,8 +43,9 @@
 
 .resultpad {
 	border: solid 1px #cccccc;
+	background: #333333;
 	width: 800px;
-	margin: auto;
+	margin: 10px auto ;
 	padding: 10px;
 	display: grid;
 	grid-template-columns: 49% 49%;

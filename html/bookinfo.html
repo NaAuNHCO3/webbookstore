@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/template.css">
+	<link rel="stylesheet" type="text/css" href="/css/bookinfo.css">
+<title>Bookinfo</title>
+</head>
+
+<body>
+<div class="bookpad">
+		<div class="title">Book Detail</div>
+	  <div class="bookinfo">
+			<form method="post">
+				<div class="content">
+					<div class="attribute booktitle tohide">The book of someone</div>
+					<span class="name hide">Title</span><input class="change hide" type="text" name="bookname" value="">
+					<span class="name">Author</span><span class="attribute tohide">Name</span><input class="change hide" type="text" name="author" value="">	<span class="name">Press</span><span class="attribute tohide">Name</span><input class="change hide" type="text" name="press" value="">
+					<span class="name">Price</span><span class="attribute tohide">Name</span><input class="change hide" type="text" name="price" value="">
+					<span class="name">Stock</span><span class="attribute tohide">Name</span><input class="change hide" type="text" name="stock" value="">
+					<span class="name">Abstract</span><div class="attribute tohide">This test sample seems useless.</div><input class="change hide" type="text" name="abstract" value="">
+				</div>
+			  	<input class="submitbutton hide" formaction="/bookchange" type="submit" value="Submit Modification">
+				<input class="submitbutton hide" formaction="/bookinsert" type="submit" value="Insert as a New Book">
+				
+			</form>
+		</div>
+		<div class="choicelist tohide" onClick="inf()">Modify</div>
+		<div class="choicelist"><a href="/search">Cancel</a></div>
+	</div>
+	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script>
+		function inf(){
+			$(".tohide").toggle();
+			$(".hide").toggle();
+			for(var i=0;i<6;i++){
+				$(".change")[i].val=$(".attribute")[i].innerHTML;
+			}
+		}
+	</script>
+</body>
+</html>
