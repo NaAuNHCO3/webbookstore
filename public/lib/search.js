@@ -38,6 +38,7 @@ router.post('/search', function(req, res){
                 })
             }
             conn.release()
+            console.log(result)
             res.send({
                 status: 0,
                 msg: 'success',

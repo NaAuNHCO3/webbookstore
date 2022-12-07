@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#back").attr("href", window.localStorage.getItem("class"))
+	//$("#back").attr("href", window.localStorage.getItem("class"))
 	$("#form").ajaxForm(function(message) {
 		$("#resultpad").children().not(":first").remove()
 		if(message.status == 0) {
