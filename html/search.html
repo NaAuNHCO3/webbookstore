@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta type="text/html" charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/css/template.css">
 	<link rel="stylesheet" type="text/css" href="/css/search.css">
 <title>Search</title>
@@ -24,18 +24,18 @@
 			</form>
 		</div>
 	</div>
-	<div id="resultpad" class="resultpad" style="display: none">
+	<div id="resultpad" class="resultpad" style="display: ">
 		<div id="bookinfo" class="bookinfo">
 			<ul>
-				<li><a id="bookname" class="booklink">Bookname</a></li>
+				<li><a id="bookname" class="booklink" href="/bookinfo">Bookname</a></li>
 				<li id="author" class="annotation">Author</li>
 				<li id="press" class="annotation">Press</li>
 				<li id="price" class="annotation">Price</li>
 			</ul>
 			<div class="operation">
 				<ul style="border: none;">
-					<li class="operate" onClick="">Add to order</li>
-					<li class="operate">Modify</li>
+					<li id="order" class="operate">Add to order</li>
+					<li id="modify" class="operate">Modify</li>
 				</ul>
 			</div>
 		</div>
@@ -49,6 +49,8 @@
 			$(".table").css("grid-template-columns"," 50% 50%");
 		}
 	</script>
+	<script type="text/javascript" src="/js/orderManage.js"></script>
+	<script type="text/javascript" src="/js/hidden.js"></script>
 	<script type="text/javascript" src="/js/search.js"></script>
 </body>
 </html>

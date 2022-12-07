@@ -1,0 +1,58 @@
+/* CSS Document */
+
+
+.bookpad {
+	background: gray;
+	border-radius: 3px;
+	width: 600px;
+	padding: 10px;
+	margin: auto;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: 30% 65%;
+	grid-row-gap: 10px;
+	grid-column-gap: 5%;
+	margin: 20px 20px;
+}
+
+.name {
+	text-align: center;
+}
+
+.bookinfo {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 17px;
+	text-align: center;
+}
+
+.change {
+	font-size: 15px;
+	word-break: normal;
+}
+
+.hide {
+	display: none;
+}
+
+.attribute {
+	width: 100%;
+	letter-spacing: 0;
+	text-align: left;
+}
+
+.submit {
+	margin: ;
+	width: 40%;
+}
+
+.booktitle {
+	grid-column: 1 / 3;
+	text-align: left;
+	padding-left: 30px;
+	font-size: 24px;
+	letter-spacing: 0;
+	margin-bottom: 20px;
+}

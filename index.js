@@ -4,6 +4,7 @@ const app = express()
 // 提供静态资源
 app.use('/', express.static('public'))
 
+// 解析表单
 app.use(express.urlencoded({ extended:false }))
 
 // base路由，访问首页、登陆界面、注册界面
