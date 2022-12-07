@@ -1,0 +1,158 @@
+/* CSS Document */
+
+.detailpad {
+	background: #777777;
+	border: solid 1px #aaaaaa;
+	width: 800px;
+	margin: auto;
+	padding: 10px;
+}
+
+.orderinfo {
+	text-align: center;
+	border-top: solid 1px #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+	line-height: 30px;
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+}
+
+.orderdetail {
+	margin: 10px 30px;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+
+.detail {
+	display: grid;
+	padding-left: 1%;
+	grid-template-columns: 9% 25% 20% 10% 10% 15% 10%;
+	overflow: hidden;
+}
+.detail span{
+	height: 100%;
+	overflow: hidden;
+}
+
+.demo {
+	
+}
+
+.light {
+	background: #aaaaaa;
+}
+.light:hover{
+	background: #000000;
+	color: #cccccc !important;
+}
+.light:hover a{
+	color: #cccccc;
+}
+.light a:hover{
+	color: blue;
+}
+
+.quantity {
+	padding: 3px 0;
+	line-height: 20px;
+	font-size: 15px;
+	text-align:center; 
+}
+.quantity input{
+	width: 40%;
+}
+
+.total {
+	text-align: center;
+}
+
+.dark {
+	background: #666666;
+}
+.dark:hover{
+	background: #000000;
+	color: #cccccc !important;
+}
+.dark:hover a{
+	color: #cccccc;
+}
+.dark a:hover{
+	color: blue;
+}
+
+.remove {
+	text-align: center;
+	color: indianred;
+	cursor: pointer;
+}
+.remove:hover{
+	color: #cccccc;
+	background: red;
+}
+
+.summary {
+	margin:20px 30px;
+	padding: 20px 0;
+	border-top:dashed 1px #cccccc;
+	text-align: right;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+
+.totalbook {
+	width: 50px;
+	color: #1CA99E;
+}
+
+.totalprice {
+	width: 100px;
+	color: orange;
+}
+
+.address {
+	margin: 0 5px;
+	padding: 5px 15px;
+	border-top: solid 1px #cccccc;
+	letter-spacing: 0;
+}
+
+
+
+.address a {
+	display: inherit;
+}
+
+.button {
+	background: #444444;
+	color: #dddddd;
+	width: 100px;
+	height: 30px;
+	border-radius: 3px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.button:hover{
+	background: #333333;
+	color: #ffffff;
+}
+
+.operate {
+	margin:0 30px;
+	text-align: right;
+}
+
+.clear {
+	background: #777777;
+	color: #cccccc;
+	width: 100px;
+	height: 30px;
+	border-radius: 3px;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+.clear:hover{
+	color: #ffffff;
+}
+
+
