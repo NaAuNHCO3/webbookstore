@@ -87,9 +87,5 @@ router.post('/changeprofile', function(req, res){
 	})
 })
 
-// 访问订单页面
-router.get('/order', function(req, res){
-	res.sendFile('html/order.html', { root : root})
-})
 
 module.exports = router
