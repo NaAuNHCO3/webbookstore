@@ -34,8 +34,8 @@
 			</ul>
 			<div class="operation">
 				<ul style="border: none;">
-					<li class="operate" onClick="addorder(bookid)">Add to order</li>
-					<li class="operate">Modify</li>
+					<li id="order" class="operate">Add to order</li>
+					<li id="modify" class="operate">Modify</li>
 				</ul>
 			</div>
 		</div>
@@ -49,6 +49,8 @@
 			$(".table").css("grid-template-columns"," 50% 50%");
 		}
 	</script>
+	<script type="text/javascript" src="/js/orderManage.js"></script>
+	<script type="text/javascript" src="/js/hidden.js"></script>
 	<script type="text/javascript" src="/js/search.js"></script>
 </body>
 </html>
