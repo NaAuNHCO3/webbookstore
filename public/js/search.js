@@ -10,6 +10,7 @@ $(document).ready(function() {
 				$(".resultpad").css("display", "grid")
 				for(var i = 1; i <= data.length; i++) {
 					$("#bookinfo:nth-child("+i+")").find("#order").attr("onClick", "addOrder(this, "+data[i-1].bookid+")")
+					$("#bookinfo:nth-child("+i+")").find("#bookname").attr("onClick", "bookLink("+data[i-1].bookid+")")
 					$("#bookinfo:nth-child("+i+")").find("#bookname").text(data[i-1].bookname)
 					$("#bookinfo:nth-child("+i+")").find("#author").text(data[i-1].author)
 					$("#bookinfo:nth-child("+i+")").find("#press").text(data[i-1].press)
