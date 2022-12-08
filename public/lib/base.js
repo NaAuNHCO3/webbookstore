@@ -21,6 +21,7 @@ router.post('/login', function(req, res) {
 	const body = req.body
 	db.getConnection(function(err, conn) {
 		if(err) {
+			console.log(err.message)
 			return res.send({
 				status: 1,
 				msg: 'connect failed'
