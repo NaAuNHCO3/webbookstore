@@ -35,6 +35,7 @@ router.post('/bookinfo', function(req, res){
                 status: 0,
                 msg:'success',
                 data: result[0]
+			})
         })
     })
 })
