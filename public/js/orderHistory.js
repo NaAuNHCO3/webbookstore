@@ -23,7 +23,7 @@ $(document).ready(function() {
 						tablebody.find("#detailid").text(detail.detailid)
 						tablebody.find("#bookname").text(detail.bookname)
 						tablebody.find("#author").text(detail.author)
-						tablebody.find("#price").text("￥"+detail.price)
+						tablebody.find("#price").text("￥"+detail.bookprice)
 						tablebody.find("#buynum").text(detail.buynum+"本")
 						if(j < details.length){
 							tablebody.clone().appendTo(orderdetail)

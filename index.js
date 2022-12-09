@@ -23,6 +23,10 @@ app.use('/', search)
 const bookinfo = require('./public/lib/bookinfo.js')
 app.use('/', bookinfo)
 
+// order路由，访问当前订单与历史订单，查询历史订单，下单
+const order = require('./public/lib/order.js')
+app.use('/', order)
+
 // 监听8080端口
 app.listen(8080, function() {
 	console.log('server running at http://127.0.0.1:8080')
