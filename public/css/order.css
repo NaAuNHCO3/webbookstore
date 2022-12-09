@@ -29,6 +29,12 @@
 	grid-template-columns: 9% 25% 20% 10% 10% 15% 10%;
 	overflow: hidden;
 }
+.detailf {
+	display: grid;
+	padding-left: 1%;
+	grid-template-columns: 14% 30% 20% 10% 10% 15%;
+	overflow: hidden;
+}
 .detail span{
 	height: 100%;
 	overflow: hidden;
