@@ -10,108 +10,31 @@
 <body>
 	<div class="orderspad">
 		<div class="title">History Orders</div>
-		<div class="orderlist">
-			<div class="order">
-				<div class="orderstate">
-				<span>Order Id:</span><span><a href="/order">xxxxx</a></span>
-					<span>Total Price:</span><span><a href="/order">0.00</a></span>
-					<span>Status:</span><span><a class="status pro" href="/order">Processing</a></span>
+		<div id="orderlist" class="orderlist">
+			<div id="order" class="order">
+				<div id="orderstate" class="orderstate">
+					<span>Order Id:</span><span><a id="orderid" href="/order">xxxxx</a></span>
+					<span>Total Price:</span><span><a id="totalprice" href="/order">0.00</a></span>
+					<span>Status:</span><span><a id="orderstatus" class="status pro" href="/order">Processing</a></span>
 					<span class="fold">▼</span>
 				</div>
-			<div class="orderdetail">
-			<div class="detail">
-				<span>Id</span>
-				<span>Book Title</span>
-				<span>Author</span>
-				<span>Price</span>
-				<span style="text-align: center">Quantity</span>
-			</div>
-			<div class="detail light">
-				<span>xxx1</span>
-				<span><a href="/bookinfo">What the fuck?</a></span>
-				<span>Silica</span>
-				<span>$</span>
-				<span>0</span>
-			</div>
-		  	<div class="detail dark">
-				<span>xxx2</span>
-				<span><a href="/bookinfo">Nice</a></span>
-				<span>Silica</span>
-				<span>$$</span>
-				<span>1</span>
-			</div>
-		  	<div class="detail light">
-				<span>xxx3</span>
-				<span><a href="/bookinfo">Never gonna...</a></span>
-				<span>Silica</span>
-				<span>$$$</span>
-				<span>2</span>
-			</div>
-		  	<div class="detail dark">
-				<span>xxx4</span>
-				<span><a href="/bookinfo">No god please no</a></span>
-				<span>Silica</span>
-				<span>$$$$</span>
-				<span>3</span>
-			</div>
-			</div>
-		</div>
-			<div class="order">
-				<div class="orderstate">
-					<span>Order Id:</span><span><a href="/order">xxxxx</a></span>
-					<span>Total Price:</span><span><a href="/order">0.00</a></span>
-					<span>Status:</span><span><a class="status urg" href="/order">Urging</a></span>
-					<span class="fold">▼</span>
+				<div id="orderdetail" class="orderdetail">
+					<div id="tablehead" class="detail">
+						<span>Id</span>
+						<span>Book Title</span>
+						<span>Author</span>
+						<span>Price</span>
+						<span style="text-align: center">Quantity</span>
+					</div>
+					<div id="tablebody" class="detail light">
+						<span id="detailid">xxx1</span>
+						<span><a id="bookname" href="/bookinfo">What the fuck?</a></span>
+						<span id="author">Silica</span>
+						<span id="price">$</span>
+						<span id="buynum">0</span>
+					</div>
 				</div>
-			<div class="orderdetail">
-			<div class="detail">
-				<span>Id</span>
-				<span>Book Title</span>
-				<span>Author</span>
-				<span>Price</span>
-				<span style="text-align: center">Quantity</span>
 			</div>
-			<div class="detail light">
-				<span>xxx1</span>
-				<span><a href="/bookinfo">What the fuck?</a></span>
-				<span>Silica</span>
-				<span>$</span>
-				<span>0</span>
-			</div>
-		  	<div class="detail dark">
-				<span>xxx2</span>
-				<span><a href="/bookinfo">Nice</a></span>
-				<span>Silica</span>
-				<span>$$</span>
-				<span>1</span>
-			</div>
-			</div>
-		</div>
-			<div class="order">
-				<div class="orderstate">
-					<span>Order Id:</span><span><a href="/order">xxxxx</a></span>
-					<span>Total Price:</span><span><a href="/order">0.00</a></span>
-					<span>Status:</span><span><a class="status" href="/order">Finished</a></span>
-					<span class="fold">▼</span>
-				</div>
-			<div class="orderdetail">
-			<div class="detail">
-				<span>Id</span>
-				<span>Book Title</span>
-				<span>Author</span>
-				<span>Price</span>
-				<span style="text-align: center">Quantity</span>
-			</div>
-			<div class="detail light">
-				<span>xxx1</span>
-				<span><a href="/bookinfo">What the fuck?</a></span>
-				<span>Silica</span>
-				<span>$</span>
-				<span>0</span>
-			</div>
-			</div>
-		</div>
-			<div class="foot">No more orders is found.</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
@@ -121,5 +44,6 @@
 			$(this).parent().parent().children(".orderdetail").toggle();
 		})
 	</script>
+	<script type="text/javascript" src="/js/orderHistory.js"></script>
 </body>
 </html>
