@@ -9,14 +9,11 @@
 
 <body>
 	<div class="detailpad">
-		<div class="title">Order</div>
+		<div class="title">Cart</div>
 		<div class="orderinfo">
-			<div>order id: <span class="annotation">000000</span></div>
-			<div>customer id:<span class="annotation">000000</span></div>
-			<div>order status:<span class="annotation">submited</span></div>
 		</div>
-	  	<div class="orderdetail">
-			<div class="detailf">
+	  	<form class="orderdetail">
+			<div class="detail">
 				<span>Id</span>
 				<span>Book Title</span>
 				<span>Author</span>
@@ -24,40 +21,43 @@
 				<span style="text-align: center">Quantity</span>
 			  	<span style="text-align: center">Total</span>
 			</div>
-			<div class="detailf light">
+			<div class="detail light">
 				<span>xxx1</span>
 				<span><a href="/bookinfo">What the fuck?</a></span>
 				<span>Silica</span>
 				<span>$</span>
-				<span style="text-align: center">0</span>
+				<span class="quantity"><input type="number" name=?></span>
 				<span class="total">=price*1</span>
+				<span class="remove" onClick="">remove</span>
 			</div>
-		  	<div class="detailf dark">
+		  	<div class="detail dark">
 				<span>xxx2</span>
 				<span><a href="/bookinfo">Nice</a></span>
 				<span>Silica</span>
 				<span>$$</span>
-				<span style="text-align: center">0</span>
+				<span class="quantity"><input type="number" name=?></span>
 				<span class="total">=price*2</span>
+			  	<span class="remove" onClick="">remove</span>
 			</div>
-		  	<div class="detailf light">
+		  	<div class="detail light">
 				<span>xxx3</span>
 				<span><a href="/bookinfo">Never gonna...</a></span>
 				<span>Silica</span>
 				<span>$$$</span>
-				<span style="text-align: center">0</span>
+				<span class="quantity"><input type="number" name=?></span>
 				<span class="total">=price*3</span>
-				
+				<span class="remove" onClick="">remove</span>
 			</div>
-		  	<div class="detailf dark">
+		  	<div class="detail dark">
 				<span>xxx4</span>
 				<span><a href="/bookinfo">No god please no</a></span>
 				<span>Silica</span>
 				<span>$$$$</span>
-				<span style="text-align: center">0</span>
+				<span class="quantity"><input type="number" name=?></span>
 				<span class="total">=price*4</span>
+			  	<span class="remove" onClick="">remove</span>
 			</div>
-		</div>
+		</form>
 		<div class="summary">
 			All in Total: <span class="totalbook">10</span> books, $<span class="totalprice">214.00</span>
 		</div>
@@ -65,9 +65,9 @@
 			<span>Destination Address: <a href="/profile">218</a></span>
 		</div>
 		<div class="operate">
-			<button class="clear"><a href="/orderhistory">Back</a></button>
-			<button class="clear" onClick="">Cancel</button>
-			<button class="button">Urge</button>
+			<button class="clear"><a href="/search">Search</a></button>
+			<button class="clear" onClick="">Abort</button>
+			<button class="button" formaction="/makeorder">Confirm</button>
 		</div>
 	</div>
 </body>
