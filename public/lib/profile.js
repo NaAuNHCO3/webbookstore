@@ -116,6 +116,7 @@ router.post('/clientlist', function(req, res){
 	})
 })
 
+
 // 顾客管理
 router.get('/clientmanage', function(req, res){
 	res.sendFile('html/clientmanage', { root , root })
