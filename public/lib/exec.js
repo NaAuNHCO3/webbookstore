@@ -1,5 +1,3 @@
-const db = require('./sql.js')
-
 const exec = function(sqlArr) {
 	return new Promise(function(resolve, reject) {
 		const promiseArr = []
