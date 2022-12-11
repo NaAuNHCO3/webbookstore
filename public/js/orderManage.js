@@ -3,7 +3,9 @@ $(document).ready(function() {
 		"accountid": window.sessionStorage.getItem("accountid"),
 		"booklist": [],
 	})
-	window.sessionStorage.setItem("order", orderStr)
+	if(!window.sessionStorage.getItem("order")){
+		window.sessionStorage.setItem("order", orderStr)
+	}
 })
 
 function addOrder(e, bookid){
