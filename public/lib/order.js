@@ -169,7 +169,6 @@ router.post('/cancelorder', function(req, res){
 				})
 			})
 		})
-		
 	})
 })
 
