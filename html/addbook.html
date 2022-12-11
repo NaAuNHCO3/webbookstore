@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/template.css">
+	<link rel="stylesheet" type="text/css" href="/css/bookinfo.css">
+<title>Add New Book</title>
+</head>
+
+<body>
+<div class="bookpad">
+		<div class="title">New Book</div>
+	  <div class="bookinfo">
+			<form method="post">
+				<div class="content">
+					<span class="name">Title</span><input class="change" type="text" name="bookname" value="">
+					<span class="name">Author</span><input class="change" type="text" name="author" value="">
+					<span class="name">Press</span><input class="change" type="text" name="press" value="">
+					<span class="name">Price</span><input class="change" type="text" name="price" value="">
+					<span class="name">Stock</span><input class="change" type="number" name="stock" value="">
+					<span class="name">Abstract</span><input class="change" type="text" name="abstract" value="">
+				</div>
+				<input class="submitbutton" formaction="/bookinsert" type="submit" value="Insert">
+				
+			</form>
+		</div>
+		<div class="choicelist"><a href="/staff">Cancel</a></div>
+	</div>
+	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+</body>
+</html>

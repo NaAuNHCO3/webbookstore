@@ -11,6 +11,8 @@ body{
 .submitbutton {
 	width: auto;
 	background-color: #CCCCCC;
+	font-size: 15px;
+	margin-top: 10px;
 }
 .submitbutton:hover{
 	background-color: #AAAAAA;
