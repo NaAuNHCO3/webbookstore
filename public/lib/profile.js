@@ -87,5 +87,37 @@ router.post('/changeprofile', function(req, res){
 	})
 })
 
+// 查询全体用户
+router.post('/clientlist', function(req, res){
+	db.getConnection(function(err, conn){
+		if(err){
+			console.log(err.message)
+			return res.send({
+				status:1,
+				msg: 'connect failed'
+			})
+		}
+		var sql = 'select * from user where userclass="client"'
+		conn.query(sql, function(err, result){
+			if(err){
+				console.log(err.message)
+				return res.send({
+					status:1,
+					msg:'203'
+				})
+			}
+			conn.release()
+			res.send({
+				status:0,
+				msg:"success",
+				data:result
+			})
+		})
+	})
+})
 
+// 顾客管理
+router.get('/clientmanage', function(req, res){
+	res.sendFile('html/clientmanage', { root , root })
+})
 module.exports = router
