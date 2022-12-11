@@ -100,32 +100,30 @@ router.post('/order', function(req, res){
 					msg: '203'
 				})
 			}
-			orderlist.accountid=result.accountid
-			orderlist.orderstatus=result.orderstatus
+			orderlist.accountid=result[0].accountid
+			orderlist.orderstatus=result[0].orderstatus
 			orderlist.orderid=orderid
-			// orderlist.details= []
 			orderlist.totalprice=0
-		})
-		var sql = 'select bookname,author,bookprice,detailid,buynum from orderdetail inner join book on orderdetail.bookid=book.bookid where orderid = ?'
-		conn.query(sql, orderid, function(err, result){
-			if (err){
-				console.log(err.message)
+			var sql = 'select bookname,author,bookprice,detailid,buynum from orderdetail inner join book on orderdetail.bookid=book.bookid where orderid = ?'
+			conn.query(sql, orderid, function(err, result){
+				if (err){
+					console.log(err.message)
+					return res.send({
+						status: 1,
+						msg: '203'
+					})
+				}
+				for(d in result){
+					orderlist.totalprice += result[d].bookprice * result[d].buynum
+				}
+				orderlist.details=result
+				conn.release()
 				return res.send({
-					status: 1,
-					msg: '203'
+					status:0,
+					msg:'success',
+					data:orderlist
 				})
-			}
-			for(d in result){
-				orderlist.totalprice += result[d].bookprice * result[d].buynum
-			}
-			orderlist.details=result
-		})
-		console.log(orderlist)
-		conn.release()
-		return res.send({
-			status:0,
-			msg:'success',
-			data:orderlist
+			})
 		})
 	})
 })
