@@ -27,6 +27,11 @@ app.use('/', bookinfo)
 const order = require('./public/lib/order.js')
 app.use('/', order)
 
+// cart路由，购物车操作
+const cart = require('./public/lib/cart.js')
+app.use('/', cart)
+
+
 // 监听8080端口
 app.listen(8080, function() {
 	console.log('server running at http://127.0.0.1:8080')
