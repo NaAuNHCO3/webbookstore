@@ -95,3 +95,15 @@ ul {
 	color: blue;
 	background: #333333;
 }
+
+.inorder {
+	background: #cccccc;
+	color: black;
+}
+
+.operate a {
+	color: #cccccc;
+}
+.operate a:hover{
+	color: blue;
+}
