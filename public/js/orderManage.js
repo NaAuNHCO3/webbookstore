@@ -18,6 +18,7 @@ function addOrder(e, bookid){
 	window.sessionStorage.setItem("order", orderStr)
 	e.setAttribute("onClick", "dropOrder(this, "+bookid+")")
 	e.innerHTML = "Drop an Order"
+	e.addClass("inorder")
 }
 
 function dropOrder(e, bookid){
@@ -34,4 +35,5 @@ function dropOrder(e, bookid){
 	window.sessionStorage.setItem("order", orderStr)
 	e.setAttribute("onClick", "addOrder(this, "+bookid+")")
 	e.innerHTML = "Add to Order"
+	e.removeClass("inorder")
 }

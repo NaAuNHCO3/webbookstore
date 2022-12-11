@@ -17,26 +17,29 @@
 					<span class="name hide">Title</span><input class="change hide" type="text" name="bookname" value="">
 					<span class="name">Author</span><span id="author" class="attribute tohide">Name</span><input class="change hide" type="text" name="author" value="">
 					<span class="name">Press</span><span id="press" class="attribute tohide">Name</span><input class="change hide" type="text" name="press" value="">
-					<span class="name">Price</span><span id="bookprice" class="attribute tohide">Name</span><input class="change hide" type="text" name="price" value="">
-					<span class="name">Stock</span><span id="bookinvent" class="attribute tohide">Name</span><input class="change hide" type="text" name="stock" value="">
+					<span class="name">Price</span><span id="bookprice" class="attribute tohide">$9.24</span><input class="change hide" type="text" name="price" value="">
+					<span class="name">Stock</span><span id="bookinvent" class="attribute tohide">0</span><input class="change hide" type="number" name="stock" value="">
 					<span class="name">Abstract</span><div id="bookabstract" class="attribute tohide">This test sample seems useless.</div><input class="change hide" type="text" name="abstract" value="">
 				</div>
+				<input class="submitbutton hide alert" formaction="/bookdelete" type="submit" value="Delete this Book">
 			  	<input class="submitbutton hide" formaction="/bookchange" type="submit" value="Submit Modification">
 				<input class="submitbutton hide" formaction="/bookinsert" type="submit" value="Insert as a New Book">
-				
 			</form>
 		</div>
-		<div class="choicelist tohide" onClick="inf()">Modify</div>
+		<div class="choicelist tohide" id="modify" onClick="inf()">Modify</div>
+		<div class="choicelist hide"><a href="/bookinfo">Refresh</a></div>
+		<div class="choicelist" id="order" onClick="addOrder(this)">Add to order</div>
 		<div class="choicelist"><a href="/search">Cancel</a></div>
 	</div>
 	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
 	<script>
 		function inf(){
-			$(".tohide").toggle();
-			$(".hide").toggle();
+			$(".tohide").hide();
+			$(".hide").show();
 			for(var i=0;i<6;i++){
-				$(".change")[i].val=$(".attribute")[i].innerHTML;
+				$(".change")[i].setAttribute("value","");
+				$(".change")[i].setAttribute("value",$(".attribute")[i].innerHTML);
 			}
 		}
 	</script>

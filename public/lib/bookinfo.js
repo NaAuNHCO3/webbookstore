@@ -9,6 +9,10 @@ const root = path.join(__dirname, '../../')
 router.get('/bookinfo', function(req, res){
     res.sendFile('html/bookinfo.html', { root : root })
 })
+// 访问新增图书界面
+router.get('/addbook', function(req, res){
+    res.sendFile('html/addbook.html', { root : root })
+})
 
 // 发起查询图书信息请求
 router.post('/bookinfo', function(req, res){
