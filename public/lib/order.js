@@ -139,6 +139,7 @@ router.post('/cancelorder', function(req, res){
 				msg: 'connect failed'
 			})
 		}
+		var sql = 'select orderstatus from orders where orderid=?'
 		conn.query(sql, orderid,function(err, result){
 			if (err){
 				console.log(err.message)
@@ -174,7 +175,7 @@ router.post('/cancelorder', function(req, res){
 
 // 订单加急
 router.post('/urgeorder', function(req, res){
-	orderid=req.orderid
+	orderid=req.body.orderid
 	db.getConnection(function(err, conn){
 		if(err){
 			console.log(err.message)
@@ -183,8 +184,8 @@ router.post('/urgeorder', function(req, res){
 				msg: 'connect failed'
 			})
 		}
-		var sql = 'select orderstatus from order where orderid=?'
-		conn.query(sql, orderid,function(err, result){
+		var sql = 'select orderstatus from orders where orderid=?'
+		conn.query(sql, orderid, function(err, result){
 			if(err){
 				console.log(err.message)
 				return res.send({
@@ -204,7 +205,7 @@ router.post('/urgeorder', function(req, res){
 					msg:"you can't urge the order having finished"
 				})
 			}
-			var sql = 'update order set orderstatus="urged" where orderid=?'
+			var sql = 'update orders set orderstatus="urged" where orderid=?'
 			conn.query(sql, orderid, function(err, reuslt){
 				if (err){
 					console.log(err.message)
