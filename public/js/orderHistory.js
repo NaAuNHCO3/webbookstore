@@ -11,8 +11,11 @@ $(document).ready(function() {
 					// 修改orderstate
 					var orderstate = orderplace.children("#orderstate")
 					orderstate.find("#orderid").text(orderdata.orderid)
+					orderstate.find("#orderid").attr("onClick", "orderLink("+orderdata.orderid+")")
 					orderstate.find("#totalprice").text(orderdata.totalprice)
+					orderstate.find("#totalprice").attr("onClick", "orderLink("+orderdata.orderid+")")
 					orderstate.find("#orderstatus").text(orderdata.orderstatus)
+					orderstate.find("#orderstatus").attr("onClick", "orderLink("+orderdata.orderid+")")
 					// 修改orderdetail
 					var orderdetail = orderplace.children("#orderdetail")
 					var details = orderdata.details
