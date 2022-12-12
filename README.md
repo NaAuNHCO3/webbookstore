@@ -106,6 +106,9 @@ const exec = function(sqlArr) {
 顾客与店员被同等视为用户而非用户与管理员，两者的差分在于允许使用的功能操作以及视图有所差异。
 
 #### 网站架构
+
+![map](https://raw.githubusercontent.com/NaAuNHCO3/webbookstore/57a44b9158c0b2e1df538f9e14070caed8c3d26f/public/img/map.jpg)
+
 网站总计13个页面，根据页面在网站中的功能分为入口页面、导航页面和功能页面。
 - 入口页面：首页index.html，注册页面register.html，登录页面login.html
 - 导航页面：店员主页staff.html，顾客主页customer.html
