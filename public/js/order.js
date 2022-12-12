@@ -31,3 +31,31 @@ $(document).ready(function() {
 		}
 	)
 })
+
+function urgeOrder() {
+	$.post(
+		"/urgeorder",
+		{ "orderid": window.sessionStorage.getItem("orderid") },
+		function(message) {
+			if(message.status == 0){
+				alert(message.msg)
+			} else {
+				alert(message.msg)
+			}
+		}
+	)
+}
+
+function cancelOrder() {
+	$.post(
+		"/cancelorder",
+		{ "orderid": window.sessionStorage.getItem("orderid") },
+		function(message) {
+			if(message.status == 0){
+				alert(message.msg)
+			} else {
+				alert(message.msg)
+			}
+		}
+	)
+}
