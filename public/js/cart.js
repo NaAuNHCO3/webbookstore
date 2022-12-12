@@ -21,6 +21,7 @@ $(document).ready(function() {
 					item.find("#author").text(data.author)
 					item.find("#bookprice").text(data.bookprice)
 					item.find("#buynum").val(1)
+					item.find("#buynum").attr("max", data.bookinvent)
 					item.find("#total").text(data.bookprice)
 					item.find("#remove").attr("onClick", "dropOrder("+data.bookid+")")
 					index += 1
