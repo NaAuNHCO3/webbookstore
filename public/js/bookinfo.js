@@ -35,13 +35,14 @@ function addOrder(e){
 	orderStr = JSON.stringify(orderJson)
 	console.log(orderStr)
 	window.sessionStorage.setItem("order", orderStr)
-	e.setAttribute("onClick", "dropOrder(this)
+	e.setAttribute("onClick", "dropOrder(this)")
 	e.innerHTML = "Drop from order"
 }
 				   
 function dropOrder(e){
 	var orderStr = window.sessionStorage.getItem("order")
 	var orderJson = JSON.parse(orderStr)
+	var bookid = window.sessionStorage.getItem("bookid")
 	for(var i = orderJson.booklist.length - 1; i >= 0; i--){
 		if(orderJson.booklist[i].bookid == bookid){
 			orderJson.booklist.splice(i, 1)

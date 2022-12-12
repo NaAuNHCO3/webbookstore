@@ -12,7 +12,7 @@
 		<div class="title">Cart</div>
 		<div class="orderinfo">
 		</div>
-	  	<form class="orderdetail">
+	  	<form id="cart" class="orderdetail">
 			<div class="detail">
 				<span>Id</span>
 				<span>Book Title</span>
@@ -21,45 +21,18 @@
 				<span style="text-align: center">Quantity</span>
 			  	<span style="text-align: center">Total</span>
 			</div>
-			<div class="detail light">
-				<span>xxx1</span>
-				<span><a href="/bookinfo">What the fuck?</a></span>
-				<span>Silica</span>
-				<span>$</span>
-				<span class="quantity"><input type="number" name=?></span>
-				<span class="total">=price*1</span>
-				<span class="remove" onClick="">remove</span>
-			</div>
-		  	<div class="detail dark">
-				<span>xxx2</span>
-				<span><a href="/bookinfo">Nice</a></span>
-				<span>Silica</span>
-				<span>$$</span>
-				<span class="quantity"><input type="number" name=?></span>
-				<span class="total">=price*2</span>
-			  	<span class="remove" onClick="">remove</span>
-			</div>
-		  	<div class="detail light">
-				<span>xxx3</span>
-				<span><a href="/bookinfo">Never gonna...</a></span>
-				<span>Silica</span>
-				<span>$$$</span>
-				<span class="quantity"><input type="number" name=?></span>
-				<span class="total">=price*3</span>
-				<span class="remove" onClick="">remove</span>
-			</div>
-		  	<div class="detail dark">
-				<span>xxx4</span>
-				<span><a href="/bookinfo">No god please no</a></span>
-				<span>Silica</span>
-				<span>$$$$</span>
-				<span class="quantity"><input type="number" name=?></span>
-				<span class="total">=price*4</span>
-			  	<span class="remove" onClick="">remove</span>
+			<div id="item" class="detail light">
+				<span id="bookid" class="bookid">xxx1</span>
+				<span id="bookname"><a href="/bookinfo">What the fuck?</a></span>
+				<span id="author">Silica</span>
+				<span id="bookprice" class="bookprice">$</span>
+				<span class="quantity"><input type="number" name=? id="buynum" class="buynum" min="1"></span>
+				<span class="total" id="total" class="total">=price*1</span>
+				<span class="remove" id="remove" onClick="">remove</span>
 			</div>
 		</form>
 		<div class="summary">
-			All in Total: <span class="totalbook">10</span> books, $<span class="totalprice">214.00</span>
+			All in Total: <span class="totalbook" id="totalbook">10</span> books, $<span class="totalprice" id="totalprice">214.00</span>
 		</div>
 		<div class="address">
 			<span>Destination Address: <a href="/profile">218</a></span>
@@ -67,8 +40,12 @@
 		<div class="operate">
 			<button class="clear"><a href="/search">Search</a></button>
 			<button class="clear" onClick="">Abort</button>
-			<button class="button" formaction="/makeorder">Confirm</button>
+			<button class="button" formaction="/makeorder" onClick="makeorder()">Confirm</button>
 		</div>
 	</div>
+	<script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/js/cart.js"></script>
+</body>
 </body>
 </html>

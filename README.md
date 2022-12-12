@@ -30,7 +30,60 @@
 
 ## 系统描述
 ### 基础架构
-// TO DO... （前端GET/POST => 后端监听 => 导入路由的回调函数 => 与数据库建立连接 => 执行事务 => 响应前端）
+本项目采用前后端分离的技术，因而系统架构自然也是围绕前后端来展开。首先，在前端由html报文和css层叠样式表组成用户交互界面。然后，利用javascript来在浏览器发起GET/POST的http请求，在这一过程中浏览器充当了客户端client的角色，我们的服务端server将始终监听8080端口，当接受到http请求后，根据其url将其引导至对应的路由并调用回调，之后进行数据库的连接并执行查询或者修改的事务。当事务完成后返回相应的相应体，供前端更新、渲染界面或是提示用户操作。
+
+### 项目亮点
+- 1. 采用javascript作为脚本语言，可被绝大多数浏览器编译执行，同时避免了apache或nginx等网络服务器的使用，因而项目具有较高的泛用性，轻量化，容易部署。
+- 2.基于回调函数的异步非阻塞代码运行模式，在后端提高了数据库的查询、修改、更新速率，在前端提高了页面更新的速度。
+- 3.利用Promis机制对数据库事务的执行进行了封装，能在更新表项发生故障时即时回滚，较好地维护了数据库事务的ACID性质，有利于维护数据库的正确性和完整性。
+
+```
+const exec = function(sqlArr) {
+	return new Promise(function(resolve, reject) {
+		var promiseArr = []
+		db.getConnection(function(err, conn) {
+			if(err) {
+				console.log('connect failed')
+				reject(err)
+			}
+			conn.beginTransaction(function(err) {
+				if(err) {
+					console.log('beginTransaction failed')
+					reject(err)
+				}
+				// 将所有需要执行的sql封装为数组
+				promiseArr = sqlArr.map(function({sql, value}) {
+					return new Promise(function(resolve, reject) {
+						conn.query(sql, value, function(e, results) {
+							e ? reject(e) : resolve({ results, success: true })
+						})
+					})
+				})
+				// Promise调用所有的sql，一旦出错则回滚，否则提交事务并释放连接
+				Promise.all(promiseArr).then(function(res) {
+					conn.commit(function(err) {
+						if(err) {
+							console.log('commit failed')
+							reject(err)
+						}
+						conn.release()
+						resolve(res)
+					})
+				}).catch(function(err) {
+					conn.rollback(function() {
+						console.log('rollback')
+					})
+					reject(err)
+				})
+			})
+		})
+	})
+}
+```
+
+- 4.前后端分离架构，使得前端具有极高的自主性，前端不再依赖于后端，因而从理论上使前端更有可能按自己的想法丰富并完善网页设计任务。
+- 5.良好的代码结构及模块化编程，提高了本项目的兼容性和易扩展性，团队之间分工协作，提升了代码质量和代码之间的耦合度。
+- 6.前端建立储存机制sessionStorage，有效沟通前后端数据和消息体，维护了请求体数据的正确性，提升了前后端交流的效率。
 
 ### 前端部分
 // TO DO... （郭鸣康负责的部分，网站的功能设计与视觉效果等）
@@ -111,7 +164,25 @@
 - 释放连接
   
 ### 前后端连接
-// TO DO... （肖萧负责的部分，怎样处理前后端数据，确定数据的格式，怎样在前端保存信息）
+### 发起GET/POST请求
+使用jquery库，借助其ajax功能，设置请求的url，headers，body并在前端发起GET/POST的http请求至后端，成功后将后端发来的http响应体解析并根据相应体的内容如status，msg，data等属性内容来决定前端将要执行的任务。
+
+#### 订单管理
+利用浏览器的sessionStorage执行订单管理，通过addOrder()和dropOrder()等函数来维护订单内容并在cart购物车界面发起makeorder下单请求时将其作为请求体的数据发送给后端。order数据格式是前后端协定的。形如：
+
+```
+{
+    accountid: 用户ID,
+    booklist: [
+        {bookname: 书名A, buynum: 购买数量},
+        {bookname: 书名B, buynum: 购买数量},
+        {bookname: 书名C, buynum: 购买数量},
+    ]
+}
+```
+
+### 显示数据
+在前端更新页面内容时用到了jquery库，通过$美元符号取DOM元素，并借助诸如attr，text，val等函数更改页面内容，结合复杂的数据结构可以实现前端页面内容的异步更新
 
 ## 数据库
 ### 数据库模式
@@ -145,7 +216,6 @@
 
 ## 测试
 ### 测试数据
-// TO DO... （陈民后负责的部分，有多少数据，准备了哪些数据）
 - 图书数据（有50本书籍的数据）
 - 订单数据 （有20条数据）
 - 订单详情数据 （有24条数据）
@@ -207,11 +277,94 @@
 - 按search按钮，用户能跳转到search界面，继续查询书本。
 
 ### 购买记录
-![order_history](https://user-images.githubusercontent.com/111762194/206899264-5c95f7a5-7fd8-4e9a-9fbe-8a183a7a814c.png)
+![orderhistory](https://user-images.githubusercontent.com/111762194/206899264-5c95f7a5-7fd8-4e9a-9fbe-8a183a7a814c.png)
 - 在order history界面上，用户能查看订单的大概信息。把鼠标箭头放在order id,total price, processing上点击，就能进入到order界面，能查看更详细的信息。
 - 点击书名，能跳转到bookinfo界面。
 
 ## 局限性
 ## 改进
 ## 程序清单
+### 文件结构
+```
+.
+├── index.js	(主函数/入口点)
+├── index.html	(首页界面)
+├── html		(诸html文件)
+│   ├── login.html		(html示例)
+│   └── register.html	(html示例)
+├── public		(站点可调用资源)
+│   ├── css		(css文件)
+│   ├── img		(图片文件)
+│   ├── js		(脚本文件)
+│   └── lib		(函数库)
+├── package.json
+├── package-lock.json
+└── README.md
+```
+### 前端清单
+```
+html
+├── addbook.html
+├── bookinfo.html
+├── cart.html
+├── changeprofile.html
+├── client.html
+├── login.html
+├── orderhistory.html
+├── order.html
+├── profile.html
+├── register.html
+├── search.html
+└── staff.html
+```
+
+```
+public/css
+├── bookinfo.css
+├── index.css
+├── login.css
+├── order.css
+├── orderhistory.css
+├── profile.css
+├── search.css
+├── template.css
+└── usercenter.css
+
+```
+
+### 后端清单
+```
+public/lib
+├── base.js
+├── bookinfo.js
+├── cart.js
+├── exec.js
+├── order.js
+├── profile.js
+├── search.js
+└── sql.js
+
+```
+
+### 前后端交互清单
+```
+public/js
+├── bookinfo.js
+├── cart.js
+├── changeprofile.js
+├── hidden.js
+├── jquery-3.6.1.min.js
+├── jquery.form.min.js
+├── link.js
+├── login.js
+├── logout.js
+├── orderHistory.js
+├── order.js
+├── orderManage.js
+├── profile.js
+├── register.js
+└── search.js
+
+```
+
 ## 贡献

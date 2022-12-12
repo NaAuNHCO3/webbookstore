@@ -3,7 +3,9 @@ $(document).ready(function() {
 		"accountid": window.sessionStorage.getItem("accountid"),
 		"booklist": [],
 	})
-	window.sessionStorage.setItem("order", orderStr)
+	if(!window.sessionStorage.getItem("order")){
+		window.sessionStorage.setItem("order", orderStr)
+	}
 })
 
 function addOrder(e, bookid){
@@ -11,14 +13,14 @@ function addOrder(e, bookid){
 	var orderJson = JSON.parse(orderStr)
 	orderJson.booklist.push({
 		"bookid": bookid,
-		"bynum": 1,
+		"buynum": 1,
 	})
 	orderStr = JSON.stringify(orderJson)
 	console.log(orderStr)
 	window.sessionStorage.setItem("order", orderStr)
 	e.setAttribute("onClick", "dropOrder(this, "+bookid+")")
 	e.innerHTML = "Drop an Order"
-	e.addClass("inorder")
+	e.setAttribute("class", "inorder")
 }
 
 function dropOrder(e, bookid){
@@ -35,5 +37,5 @@ function dropOrder(e, bookid){
 	window.sessionStorage.setItem("order", orderStr)
 	e.setAttribute("onClick", "addOrder(this, "+bookid+")")
 	e.innerHTML = "Add to Order"
-	e.removeClass("inorder")
+	e.setAttribute("class", "outorder")
 }
