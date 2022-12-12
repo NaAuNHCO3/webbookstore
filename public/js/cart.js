@@ -80,17 +80,17 @@ function dropOrder(bookid) {
 }
 
 function makeorder() {
-	var accountid = window.sessionStorage.getItem("accountid")
-	var order = windwo.sessionStorage.getItem("order")
-	$.post(
-		"/makeorder",
-		{ "accountid": accountid, "detail": order },
-		function(message) {
+	var orderStr = window.sessionStorage.getItem("order")
+	$.ajax({
+		url: "/makeorder",
+		type: "post",
+		data: { data: orderStr },
+		success: function(message) {
 			if(message.status == 0) {
 				alert(message.msg)
 			} else {
 				alert(message.msg)
 			}
 		}
-	)
+	})
 }

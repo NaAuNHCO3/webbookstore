@@ -13,7 +13,7 @@ function addOrder(e, bookid){
 	var orderJson = JSON.parse(orderStr)
 	orderJson.booklist.push({
 		"bookid": bookid,
-		"bynum": 1,
+		"buynum": 1,
 	})
 	orderStr = JSON.stringify(orderJson)
 	console.log(orderStr)
