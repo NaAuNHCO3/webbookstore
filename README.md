@@ -135,23 +135,55 @@
 // TO DO... （到时候再说）
 
 ## 用户手册
+
 ### 首页
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![index](https://user-images.githubusercontent.com/111762194/206899381-b185c374-bbdc-4a06-a866-e7b2125cf419.png)
+- 进入首页（inidex.html）能看到两个按钮：login, register。按login按钮，跳转到login界面，按register按钮，跳转到register界面。
 
 ### 注册登陆
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![register](https://user-images.githubusercontent.com/111762194/206899108-9004d0d1-4407-4820-b186-8c267004ec34.png)
+- 这是register界面。添加信息之后，按submit就能登记成功。
+
+![login](https://user-images.githubusercontent.com/111762194/206899117-101ba4ae-2701-4bce-b5c6-bfef784d6eb5.png)
+- 这是login界面。准确添加登记时使用的信息之后，按submit就能登录成功。
+
+![client](https://user-images.githubusercontent.com/111762194/206899192-ed111455-a736-494b-83aa-9b1a9ea9d76b.png)
+- client界面上显示具有client权限的用户能选择的选项。按quit，返回到login界面。
+
+![staff](https://user-images.githubusercontent.com/111762194/206899196-c8959438-5d42-4e67-9a4f-a548040680e2.png)
+- staff界面上显示具有staff权限的用户能选择的选项。按Exit，返回到login界面。
 
 ### 个人信息
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![profile](https://user-images.githubusercontent.com/111762194/206899122-3b7e91a5-159c-4ce8-8aae-7589d9c74cc4.png)
+- 在profile界面上，用户能看到自己的个人信息。
+
+![changeprofile](https://user-images.githubusercontent.com/111762194/206899126-f4ebda8f-b234-49d9-98c5-ce954efdec76.png)
+- 在changeprofile界面上，用户能修改个人信息。
 
 ### 查询书本
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![search1](https://user-images.githubusercontent.com/111762194/206909726-3a9c4bbf-ea00-4ac4-b996-86a411526e08.png)
+- 在search界面上，能查询书本。简单地输入书名之后查询书本也可以，按extend search之后附加其他信息之后更准确地查询也可以。
+- 下面黑框里面，会显示跟输入信息对应的查询结果。用户能看到书本的书名、作者、出版社和价格，为了查看更详细的结果，点击蓝色的书名就能跳转到bookinfo界面。把鼠标箭头放在黑框上面，会显示add to order,modify按钮。按add to order按钮，能把书放在购物车里。 具有staff权限的用户能按modify按钮，修改书本信息。
+
+![bookinfo](https://user-images.githubusercontent.com/111762194/206899467-810e20bf-9d98-4802-807e-02f0fb05dfe6.png)
+- 在bookinfo界面上，除了书名、作者、出版社和价格以外，还能查询到存库信息和摘要。具有staff权限的用户能点击modify，修改书籍信息。
 
 ### 订单操作
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![order1](https://user-images.githubusercontent.com/111762194/206899239-f1f591c4-51a7-462b-831f-2e0cdca615e6.png)
+- 在order界面上，能查询到用户下单的书本信息。用户会能看到书本的按back按钮，就能跳转到orderhistory界面。
+- 按urge按钮，用户能催单。
+
+![cart](https://user-images.githubusercontent.com/111762194/206899148-3f6c2bed-53e5-4fe1-9b7b-4a5ec58a061d.png)
+- 在cart界面上实现了购物车的功能。点击书名，能跳转到bookinfo界面，能查看书本详细信息。 在界面右下角，显示用户加入购物车的书本的总量和总价。
+- 在quantity方框里，用户能调整想要购买的数量。
+- 按remove按钮，用户能删除加入到购物车的书本信息。
+- 按confirm按钮，能确认并保存修改的信息。
+- 按search按钮，用户能跳转到search界面，继续查询书本。
 
 ### 购买记录
-// TO DO... （贴一张照片，讲一讲要怎么使用）
+![order_history](https://user-images.githubusercontent.com/111762194/206899264-5c95f7a5-7fd8-4e9a-9fbe-8a183a7a814c.png)
+- 在order history界面上，用户能查看订单的大概信息。把鼠标箭头放在order id,total price, processing上点击，就能进入到order界面，能查看更详细的信息。
+- 点击书名，能跳转到bookinfo界面。
 
 ## 局限性
 ## 改进
